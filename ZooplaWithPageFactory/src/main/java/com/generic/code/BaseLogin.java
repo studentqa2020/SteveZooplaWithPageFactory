@@ -3,15 +3,9 @@ package com.generic.code;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.config.BaseConfig;
 import com.page.object.model.LoginPage;
 import com.util.Highlighter;
@@ -28,9 +22,9 @@ public class BaseLogin {
 		System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 		Logger.getLogger("org.openqa.selenium").setLevel(Level.OFF);
 		
-		WebDriver driver = new ChromeDriver();//upcasting
+		WebDriver driver = new ChromeDriver();
 		
-		driver.manage().window().maximize();//maximum or full size
+		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		
 		driver.get(BaseConfig.getconfig("URL"));
@@ -39,27 +33,30 @@ public class BaseLogin {
 		
 		System.out.println(driver.getTitle());
 		new Highlighter().getcolor(driver, login.getLogin());
+		TakeAppScreenShot.captureScreenShot(driver, "Cookies page");
 		
 		login.getCookies().click();
 		
-		login.getLogin().click();// click
+		login.getLogin().click();
 		System.out.println(driver.getCurrentUrl());
 		System.out.println(driver.getTitle());
 
-		Wait.getExplicitWaitClicable(driver, login.getEmail());
-		new Highlighter().getcolor(driver, login.getEmail(), "yellow");
+		Wait.getExplicitWaitClickable(driver, login.getEmail());
+		new Highlighter().getcolor(driver, login.getEmail(), "green");
 		login.getEmail().sendKeys(BaseConfig.getconfig("email"));
+		TakeAppScreenShot.captureScreenShot(driver, "Email success");
 		
 		
-		new Highlighter().getcolor(driver, login.getPass(),"black");
+		new Highlighter().getcolor(driver, login.getPass(),"blue");
 		login.getPass().sendKeys(BaseConfig.getconfig("pass"));
+		TakeAppScreenShot.captureScreenShot(driver, "Password success");
 		Thread.sleep(3000);
 
 		login.getSubmit().click();
 		TakeAppScreenShot.captureScreenShot(driver, "Login success");
 		System.out.println(driver.getTitle());
 		
-		driver.quit();//= all browser tab + Chrome driver
+		driver.quit();
 		
 	}
 

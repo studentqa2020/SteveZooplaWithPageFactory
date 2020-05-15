@@ -17,7 +17,7 @@ public class TakeAppScreenShot {
 
 	public static String captureScreenShot(WebDriver driver, String ScreenShotName) {
 
-		TakesScreenshot ts = (TakesScreenshot) driver;// typingcasting
+		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		String currentDir = System.getProperty("user.dir");
 		DateFormat dateFormat = new SimpleDateFormat("yyyy_MM_dd___HH_mm_ss");
@@ -36,8 +36,6 @@ public class TakeAppScreenShot {
 
 			e.printStackTrace();
 		}
-
-		// System.out.println("Screen shot taken");
 
 		return destination;
 

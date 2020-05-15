@@ -8,13 +8,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Wait {
 
-	public static void getExplicitWaitClicable(WebDriver driver, WebElement element) {
+	public static void getExplicitWaitClickable(WebDriver driver, WebElement element) {
 
 		WebDriverWait obj = new WebDriverWait(driver, 30);
 		obj.until(ExpectedConditions.elementToBeClickable(element));
 	}
 
-	public static void getExplicitWaitForNumber(WebDriver driver,By locator) {
+	public static void getExplicitWaitForNumberOfElements(WebDriver driver,By locator) {
 
 		WebDriverWait obj = new WebDriverWait(driver, 30);
 		obj.until(ExpectedConditions.numberOfElementsToBeMoreThan(locator, 0));
