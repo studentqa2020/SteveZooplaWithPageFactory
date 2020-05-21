@@ -14,7 +14,7 @@ import com.util.Wait;
 
 public class BaseLogin {
 
-	
+	protected static WebDriver driver;
 	
 	public static void getLogin() throws Throwable {
 		
@@ -22,7 +22,7 @@ public class BaseLogin {
 		System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 		Logger.getLogger("org.openqa.selenium").setLevel(Level.OFF);
 		
-		WebDriver driver = new ChromeDriver();
+		driver = new ChromeDriver();
 		
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
@@ -33,7 +33,7 @@ public class BaseLogin {
 		
 		System.out.println(driver.getTitle());
 		new Highlighter().getcolor(driver, login.getLogin());
-		TakeAppScreenShot.captureScreenShot(driver, "Cookies page");
+		//TakeAppScreenShot.captureScreenShot(driver, "Cookies page");
 		
 		login.getCookies().click();
 		
@@ -44,19 +44,19 @@ public class BaseLogin {
 		Wait.getExplicitWaitClickable(driver, login.getEmail());
 		new Highlighter().getcolor(driver, login.getEmail(), "green");
 		login.getEmail().sendKeys(BaseConfig.getconfig("email"));
-		TakeAppScreenShot.captureScreenShot(driver, "Email success");
+		//TakeAppScreenShot.captureScreenShot(driver, "Email success");
 		
 		
 		new Highlighter().getcolor(driver, login.getPass(),"blue");
 		login.getPass().sendKeys(BaseConfig.getconfig("pass"));
-		TakeAppScreenShot.captureScreenShot(driver, "Password success");
+		//TakeAppScreenShot.captureScreenShot(driver, "Password success");
 		Thread.sleep(3000);
 
 		login.getSubmit().click();
 		TakeAppScreenShot.captureScreenShot(driver, "Login success");
 		System.out.println(driver.getTitle());
 		
-		driver.quit();
+		//driver.quit();
 		
 	}
 
