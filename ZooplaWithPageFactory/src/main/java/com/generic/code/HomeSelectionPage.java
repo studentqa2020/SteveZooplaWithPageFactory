@@ -14,7 +14,10 @@ import com.util.Wait;
 
 public class HomeSelectionPage extends BaseLogin {
 
+	public static void main(String[] args) throws Throwable {
 	
+		HomeSelectionPage.homePage();
+	}
 	public static void homePage() throws Throwable {
 
 		
@@ -44,7 +47,7 @@ public class HomeSelectionPage extends BaseLogin {
 			
 			pf.getHomePrices().get(4).click();	//Index 4 gives 5th Property	
 					
-			Wait.getExplicitWaitForNumberOfElements(driver, 10);
+			Wait.getExplicitWaitForNumberOfElements(driver, 14);
 			if(pf.getLogo().isDisplayed()) {
 				System.out.println("Logo is available, See Screen Shot");
 			} else {

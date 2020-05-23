@@ -28,7 +28,7 @@ public class ProductPage {
 	private WebElement agentPhoneNumber;
 	@FindBy(xpath="//*[@id='header-account-panel__signed-in-link']")
 	private WebElement zooplaSignOut;
-	@FindBy(xpath="//span[contains(text(),'Sign out')]")
+	@FindBy(xpath="(//*[@class='ui-header-account-panel-description'])[5]")
 	private WebElement signOut;
 	
 	//img[@alt='Parkmove'])[1] = Logo
