@@ -13,19 +13,34 @@ public class ProductPage {
 		PageFactory.initElements(driver, this);
 
 	}
+	
 	@FindBy(xpath="//input[@id='search-input-location']")
 	private WebElement searchBox;
 	@FindBy(xpath = "//*[@value='Search']")
 	private WebElement searchBtn;
 	@FindBy(xpath = "//*[@class='listing-results-price text-price']")
 	private List<WebElement> allHomePrices;
-	@FindBy(xpath="(//img[@alt='Parkmove'])[1]")
+	@FindBy(xpath="//img[@class='js-lazy-loaded']")
 	private WebElement logo;
 	@FindBy(xpath="(//h4[@class='ui-agent__name'])[1]")
 	private WebElement agentName;
 	@FindBy(xpath="(//p[@class='ui-agent__tel ui-agent__text'])[1]")
 	private WebElement agentPhoneNumber;
+	@FindBy(xpath="//*[@id='header-account-panel__signed-in-link']")
+	private WebElement zooplaSignOut;
+	@FindBy(xpath="//span[contains(text(),'Sign out')]")
+	private WebElement signOut;
 	
+	//img[@alt='Parkmove'])[1] = Logo
+	//*[@class='mnav__item']//span[contains(text(),'Sign out')] = Sign out
+	
+	public WebElement getsignOut() {
+		return signOut;
+		}
+	
+	public WebElement getzooplaSignOut() {
+		return zooplaSignOut;
+		}
 	
 	public WebElement getAgentPhoneNum() {
 	return agentPhoneNumber;

@@ -19,4 +19,9 @@ public class Wait {
 		WebDriverWait obj = new WebDriverWait(driver, 30);
 		obj.until(ExpectedConditions.numberOfElementsToBeMoreThan(locator, 0));
 	}
+
+	public static void getExplicitWaitForNumberOfElements(WebDriver driver, int i) {
+		// TODO Auto-generated method stub
+		
+	}
 }
