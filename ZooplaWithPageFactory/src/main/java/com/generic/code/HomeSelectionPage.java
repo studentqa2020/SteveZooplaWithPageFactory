@@ -45,9 +45,10 @@ public class HomeSelectionPage extends BaseLogin {
 			Collections.reverse(AllPrices);
 			System.out.println("Sorted Home Prices: "+AllPrices);
 			
+			Thread.sleep(3000);
+			
 			pf.getHomePrices().get(4).click();	//Index 4 gives 5th Property	
 					
-			Wait.getExplicitWaitForNumberOfElements(driver, 14);
 			if(pf.getLogo().isDisplayed()) {
 				System.out.println("Logo is available, See Screen Shot");
 			} else {
