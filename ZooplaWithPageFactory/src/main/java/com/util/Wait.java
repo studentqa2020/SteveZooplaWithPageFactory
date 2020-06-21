@@ -24,4 +24,9 @@ public class Wait {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public void getExplicitWait(WebDriver driver, WebElement agentName) {
+		// TODO Auto-generated method stub
+		
+	}
 }

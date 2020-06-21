@@ -16,7 +16,7 @@ public class BaseLogin {
 
 	protected static WebDriver driver;
 	
-	public static void getLogin() throws Throwable {
+	public static WebDriver getLogin() throws Throwable {
 		
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
 		System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
@@ -56,6 +56,7 @@ public class BaseLogin {
 		TakeAppScreenShot.captureScreenShot(driver, "Login success");
 		System.out.println(driver.getTitle());
 		
+		return driver;
 		//driver.quit();
 		
 	}

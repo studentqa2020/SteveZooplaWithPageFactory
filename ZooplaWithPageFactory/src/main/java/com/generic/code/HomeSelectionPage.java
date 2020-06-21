@@ -3,10 +3,7 @@ package com.generic.code;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
+import org.openqa.selenium.interactions.Actions;
 import com.config.BaseConfig;
 import com.page.object.model.ProductPage;
 import com.util.TakeAppScreenShot;
@@ -21,7 +18,7 @@ public class HomeSelectionPage extends BaseLogin {
 	public static void homePage() throws Throwable {
 
 		
-		getLogin();
+		//getLogin();
 
 		ProductPage pf = new ProductPage(driver);
 		
@@ -42,13 +39,16 @@ public class HomeSelectionPage extends BaseLogin {
 				AllPrices.add(Integer.parseInt(Homeprice[0].replace("£","").replace(",","").trim()));//.trim method removes white space
 			}
 
+			Collections.sort(AllPrices);
 			Collections.reverse(AllPrices);
 			System.out.println("Sorted Home Prices: "+AllPrices);
-			
+				
 			Thread.sleep(3000);
 			
-			pf.getHomePrices().get(4).click();	//Index 4 gives 5th Property	
-					
+			pf.getHomePrices().get(4).click();	//Index 4 gives 5th Property
+			
+			new Wait().getExplicitWait(driver, pf.getAgentName());
+			
 			if(pf.getLogo().isDisplayed()) {
 				System.out.println("Logo is available, See Screen Shot");
 			} else {
@@ -59,11 +59,11 @@ public class HomeSelectionPage extends BaseLogin {
 			System.out.println("Agent Phone # is: "+pf.getAgentPhoneNum().getText());
 			TakeAppScreenShot.captureScreenShot(driver, "Agent Info with Logo");
 			
-			pf.getzooplaSignOut().click();
-			
-			//pf.getsignOut().click();
-
+			Actions signOut = new Actions(driver);
+			signOut.moveToElement(pf.getzooplaSignOut()).build().perform();
+			signOut.moveToElement(pf.getzooplaSignOut()).build().perform();
 			TakeAppScreenShot.captureScreenShot(driver, "User has signed out");
+			pf.getsignOut().click();
 			
 			driver.quit();	
 

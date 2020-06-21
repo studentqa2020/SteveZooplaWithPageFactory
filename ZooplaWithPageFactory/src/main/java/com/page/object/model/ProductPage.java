@@ -20,7 +20,7 @@ public class ProductPage {
 	private WebElement searchBtn;
 	@FindBy(xpath = "//*[@class='listing-results-price text-price']")
 	private List<WebElement> allHomePrices;
-	@FindBy(xpath="//img[@class='js-lazy-loaded']")
+	@FindBy(xpath="(//img[@alt='Parkmove'])[1]")
 	private WebElement logo;
 	@FindBy(xpath="(//h4[@class='ui-agent__name'])[1]")
 	private WebElement agentName;
@@ -28,12 +28,10 @@ public class ProductPage {
 	private WebElement agentPhoneNumber;
 	@FindBy(xpath="//*[@id='header-account-panel__signed-in-link']")
 	private WebElement zooplaSignOut;
-	@FindBy(xpath="(//*[@class='notifications__item'])[5]")
+	@FindBy(xpath="//span[contains(text(),'Sign out')]")
 	private WebElement signOut;
 	
-	//img[@alt='Parkmove'])[1] = Logo
-	//*[@class='mnav__item']//span[contains(text(),'Sign out')] = Sign out
-	
+		
 	public WebElement getsignOut() {
 		return signOut;
 		}
