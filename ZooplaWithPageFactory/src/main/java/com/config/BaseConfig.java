@@ -18,7 +18,7 @@ public class BaseConfig {
 		return pro.get(key).toString();
 	}
 	public static void main(String[] args) throws Throwable {
-		System.out.println(BaseConfig.getconfig("email"));
+		System.out.println(BaseConfig.getconfig("location"));
 	
 	}
 

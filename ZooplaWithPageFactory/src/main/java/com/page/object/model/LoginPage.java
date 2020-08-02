@@ -14,7 +14,7 @@ public class LoginPage {
 
 	@FindBy(xpath = "//*[@class='ui-button-primary ui-cookie-accept-all-medium-large']")
 	private WebElement cookies;
-	@FindBy(xpath = "//*[@class= 'button button--tertiary-dark account-link__text']")
+	@FindBy(xpath = "(//*[@data-testid ='header-profile-sign-in'])[1]")
 	private WebElement login;
 	@FindBy(xpath = "//*[@id='signin_email']")
 	private WebElement email;
@@ -23,6 +23,7 @@ public class LoginPage {
 	@FindBy(xpath = "//*[@id='signin_submit']")
 	private WebElement submit;
 
+	//ui-button-primary ui-cookie-accept-all-medium-large
 	
 	public WebElement getCookies() {
 		return cookies;

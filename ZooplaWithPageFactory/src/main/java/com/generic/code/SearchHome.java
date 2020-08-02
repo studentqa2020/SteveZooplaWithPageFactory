@@ -56,10 +56,7 @@ public class SearchHome {
 		System.out.println("Agent Phone # is: "+pf.getAgentPhoneNum().getText());
 		TakeAppScreenShot.captureScreenShot(driver, "Agent Info with Logo");
 		System.out.println("Logo is available, See Screen Shot");
-		pf.getzooplaSignOut().click();
 		
-		//pf.getsignOut().click();
-
 		TakeAppScreenShot.captureScreenShot(driver, "User has signed out");
 		
 		

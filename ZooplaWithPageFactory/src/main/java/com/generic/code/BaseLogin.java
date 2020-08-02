@@ -32,7 +32,7 @@ public class BaseLogin {
 		LoginPage login =new LoginPage(driver);
 		
 		System.out.println(driver.getTitle());
-		new Highlighter().getcolor(driver, login.getLogin());
+		//new Highlighter().getcolor(driver, login.getLogin());
 		//TakeAppScreenShot.captureScreenShot(driver, "Cookies page");
 		
 		login.getCookies().click();
