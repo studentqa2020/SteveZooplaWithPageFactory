@@ -47,7 +47,7 @@ public class HomeSelectionPage extends BaseLogin {
 			
 			pf.getHomePrices().get(4).click();	//Index 4 gives 5th Property
 			
-			new Wait().getExplicitWait(driver, pf.getAgentName());
+			new Wait().getExplicitWaitVisible(driver, pf.getAgentName());
 			
 			if(pf.getLogo().isDisplayed()) {
 				System.out.println("Logo is available, See Screen Shot");

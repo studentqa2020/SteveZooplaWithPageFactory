@@ -25,8 +25,9 @@ public class Wait {
 		
 	}
 
-	public void getExplicitWait(WebDriver driver, WebElement agentName) {
-		// TODO Auto-generated method stub
+	public static void getExplicitWaitVisible(WebDriver driver, WebElement element) {
+		WebDriverWait obj = new WebDriverWait(driver,30);
+		obj.until(ExpectedConditions.visibilityOf(element));
 		
 	}
 }

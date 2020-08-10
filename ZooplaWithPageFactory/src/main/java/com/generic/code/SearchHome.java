@@ -44,7 +44,7 @@ public class SearchHome {
 		
 		pf.getHomePrices().get(4).click();	//Index 4 gives 5th Property
 		
-		new Wait().getExplicitWait(driver, pf.getAgentPhoneNum());
+		new Wait().getExplicitWaitVisible(driver, pf.getAgentPhoneNum());
 		
 //		if(pf.getLogo().isDisplayed()) {
 //			System.out.println("Logo is available, See Screen Shot");

@@ -106,11 +106,11 @@ public static WebDriver setup(WebDriver driver) throws Throwable {
 		
 		pf.getHomePrices().get(4).click();	//Index 4 gives 5th Property
 		
-		new Wait().getExplicitWait(driver, pf.getAgentPhoneNum());
+		new Wait().getExplicitWaitVisible(driver, pf.getAgentPhoneNum());
 	}
 	public static void getAgentInfo (WebDriver driver){
 		
-	
+	Wait.getExplicitWaitVisible(driver, pf.getAgentName());
 	System.out.println("Agent Name is: "+pf.getAgentName().getText());
 	System.out.println("Agent Phone # is: "+pf.getAgentPhoneNum().getText());
 	TakeAppScreenShot.captureScreenShot(driver, "Agent Info with Logo");
