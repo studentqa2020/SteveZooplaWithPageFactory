@@ -1,7 +1,7 @@
-Feature: Zoopla login and search feature 
+Feature: Zoopla login with search feature 
 	Description : Go to Zoopla site, Login with Valid Credentials, Search for homes in New York Lincolshire, sort prices, and select 5th Property.
 	
-Scenario: As a Zoopla user , I can login successfully with valid user name and password, perform search, and sort properties 
+Scenario: As a Zoopla user, I can login successfully with valid user name and password, perform search, and sort properties 
 	Given open a browser 
 	And Put URL 
 	When Accept Cookies

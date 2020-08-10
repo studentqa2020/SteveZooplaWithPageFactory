@@ -69,7 +69,9 @@ public static WebDriver setup(WebDriver driver) throws Throwable {
 	}
 	
 	public static void searchHomes (WebDriver driver) throws Throwable {
+		//Thread.sleep(3000);		
 		pf = new ProductPage(driver);
+		Wait.getExplicitWaitClickable(driver, pf.getSearchBox());
 		pf.getSearchBox().sendKeys(BaseConfig.getconfig("location"));
 		
 		pf.getSearchBtn().click();

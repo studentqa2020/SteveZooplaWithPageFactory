@@ -27,7 +27,8 @@ public class ProductPage {
 	private WebElement agentName;
 	@FindBy(xpath="(//p[@class='ui-agent__tel ui-agent__text'])[1]")
 	private WebElement agentPhoneNumber;
-	@FindBy(xpath="//*[@id='header-account-panel__signed-in-link']")
+	//@FindBy(xpath="//*[@id='header-account-panel__signed-in-link']")
+	@FindBy(xpath="//*[@class='css-1mjljx5 eson0er0']//*[text()='My Zoopla']")
 	private WebElement zooplaSignOut;
 	@FindBy(xpath="(//div[@content='Sign out'])[1]")
 	private WebElement signOut;
